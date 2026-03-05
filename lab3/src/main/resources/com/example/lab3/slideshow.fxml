@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.lab3.SlideshowController"
+            prefWidth="900" prefHeight="700">
+
+    <top>
+        <VBox spacing="5" minHeight="80" prefHeight="80">
+            <padding>
+                <Insets top="10" right="10" bottom="5" left="10" />
+            </padding>
+            <Label fx:id="fileNameLabel" text="Файл: " minWidth="800" />
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Фильтр:" minWidth="40" />
+                <ComboBox fx:id="filterBox" prefWidth="100" />
+                <Label fx:id="filterLabel" text="Фильтр: Все" minWidth="150" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER">
+            <ImageView fx:id="imageView" fitWidth="800" fitHeight="450"
+                       preserveRatio="true" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="15" alignment="CENTER" minHeight="150" prefHeight="150">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+
+            <HBox spacing="20" alignment="CENTER" minWidth="300">
+                <Label text="Позиция:" minWidth="60" />
+                <Label fx:id="positionLabel" text="0" minWidth="30" alignment="CENTER" />
+                <Label text="из" minWidth="20" alignment="CENTER" />
+                <Label fx:id="totalLabel" text="0" minWidth="30" alignment="CENTER" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER" minWidth="300">
+                <CheckBox fx:id="fadeCheck" text="Исчезание" minWidth="100" />
+                <CheckBox fx:id="scaleCheck" text="Масштаб" minWidth="100" />
+            </HBox>
+
+            <HBox alignment="CENTER" minWidth="400">
+                <Slider fx:id="timeSlider" prefWidth="400" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER" minWidth="400">
+                <Button fx:id="btnFirst" text="&#171;" prefWidth="50" />
+                <Button fx:id="btnPrev" text="&#60;" prefWidth="50" />
+                <Button fx:id="btnPlay" text="&#9654;" prefWidth="50" />
+                <Button fx:id="btnNext" text="&#62;" prefWidth="50" />
+                <Button fx:id="btnLast" text="&#187;" prefWidth="50" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
